@@ -1,3 +1,3 @@
 from django.db import models
 
-class Bookmark(models.Model)
+class mainview(models.Model)
