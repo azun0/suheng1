@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from django.views.generic.list import ListView
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
@@ -32,3 +32,10 @@ class PhotoDetail(DetailView):
     model = Photo
     template_name_suffix = '_detail'
 
+def form_valid(self,form):
+    form.instance.author_id = self.request.user.id
+    if form.is_valid():
+        form.instance.save()
+        return redirect('/')
+    else:
+        return self.render_to_response({'form':form})
