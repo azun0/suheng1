@@ -1,5 +1,5 @@
 from django import forms
-from .models import watchup
+from .models import Board, watchup
 from django_summernote.fields import SummernoteTextField
 from django_summernote.widgets import SummernoteWidget
 
@@ -16,8 +16,8 @@ class BoardWriteForm(forms.ModelForm):
     contents = SummernoteTextField()
 
     options = (
-        ('Python', '파이썬 게시판'),
-        ('JavaScript', '자바스크립트 게시판')
+        #('Python', '파이썬 게시판'),
+        #('JavaScript', '자바스크립트 게시판')
     )
 
     board_name = forms.ChoiceField(
