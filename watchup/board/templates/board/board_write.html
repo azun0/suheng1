@@ -2,4 +2,18 @@
 
 {% block contents %}
 <div>게시판 글쓰기!</div>
-% endblock contents %
+<form action="" method='POST'>
+    {% csrf_token %}
+
+    {% for form in forms %}
+    <div>
+        <label for="{{ form.id_for_label }}">{{ form.label }}</label>
+    </div>
+    {% endfor %}
+
+    {% if error %}
+    {{ error }}
+    {% endif %}
+    <button type="submit">게시</button>
+</form>
+{% endblock contents %}

@@ -1,7 +1,7 @@
 from django import forms
 from .models import watchup
-from django_admin.fields import AdminTextField
-from django_admin.widgets import AdminnoteWidget
+from django_summernote.fields import SummernoteTextField
+from django_summernote.widgets import SummernoteWidget
 
 class BoardWriteForm(forms.ModelForm):
     title = forms.CharField(
@@ -13,7 +13,7 @@ class BoardWriteForm(forms.ModelForm):
         required=True,
     )
 
-    contents = AdminnoteTextField()
+    contents = SummernoteTextField()
 
     options = (
         ('Python', '파이썬 게시판'),
@@ -40,7 +40,7 @@ class BoardWriteForm(forms.ModelForm):
             'board_name'
         ]
         widgets = {
-            'contents' : AdminnoteWidget()
+            'contents' : SummernoteWidget()
         }
 
 def clean(self):
