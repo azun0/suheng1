@@ -22,7 +22,12 @@ from django.conf.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     path('', RedirectView.as_view(url="/home/", permanent=True)),
+=======
+    path('',include('photo.urls')),
+    path('accounts/', include('accounts.urls'))
+>>>>>>> Stashed changes
 =======
     path('',include('photo.urls')),
     path('accounts/', include('accounts.urls'))
