@@ -55,12 +55,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< Updated upstream
     'disqus',
     'django.contrib.sites',
-=======
     'users.apps.UsersConfig',
->>>>>>> Stashed changes
 ]
 
 MIDDLEWARE = [
@@ -145,25 +142,19 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, '.static')
 
-<<<<<<< Updated upstream
 MEDIA_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'meida')
-=======
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
->>>>>>> Stashed changes
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-<<<<<<< Updated upstream
+
 DISQUS_WEBSITE_SHORTNAME = 'watchup'
 LOGIN_REDIRECT_URL ='/' 
-=======
 
 LOGIN_URL = '/users/login/'          # 로그인 URL
 LOGIN_REDIRECT_URL = '/users/main/'  # 로그인 후 URL
 LOGOUT_REDIRECT_URL = '/'            # 로그아웃 후 URL
 AUTH_USER_MODEL = "users.User"       # 커스텀 인증 모델
->>>>>>> Stashed changes
