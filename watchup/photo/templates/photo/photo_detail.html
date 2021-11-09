@@ -17,6 +17,12 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">수정일 : {{ object.updated }}</ul>
                         <li class="list-group-item">생성일 : {{ object.created }}</ul>
+
+                            {% load disqus_tags %}
+                            <div class="card-body">
+                                {% disqus_show_comments %}
+                            </div>
+
                     </ul>
                     <div class="card-body">
                         <a href="{% url 'photo:update' object.id %}" class="card-link">수정하기</a>
