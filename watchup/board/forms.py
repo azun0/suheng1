@@ -43,6 +43,7 @@ class BoardWriteForm(forms.ModelForm):
             'contents' : SummernoteWidget()
         }
 
+def clean(self):
     def clean(self):
         cleaned_data = super().clean()
 
