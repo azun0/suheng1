@@ -11,7 +11,7 @@ urlpatterns = [
     path("delete/<int:pk>/",PhotoDelete.as_view(),name='delete'),
     path("update/<int:pk>/",PhotoUpdate.as_view(),name='update'),
     path("detail/<int:pk>/",PhotoDetail.as_view(),name='detail'),
-    path("",PhotoList.as_view(),name='index'),
+    path("home/",PhotoList.as_view(),name='index'),
 ]
 
 from django.conf.urls.static import static
