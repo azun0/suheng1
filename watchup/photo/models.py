@@ -20,6 +20,11 @@ class Photo(models.Model):
     class Meta:
         ordering = ['-created']
 
+<<<<<<< Updated upstream
 
     def get_absolute_url(self):
         return reverse('photo:detail', args=[self.id])
+=======
+    def get_absolute_url(self):
+        return reverse('photo:detail',args=[self.id])
+>>>>>>> Stashed changes
