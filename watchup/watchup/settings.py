@@ -34,22 +34,12 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'photo',
-    'accounts',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     'disqus',
     'django.contrib.sites',
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 ]
 
 MIDDLEWARE = [
@@ -139,19 +129,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'meida')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 DISQUS_WEBSITE_SHORTNAME = 'watchup'
-=======
-
 LOGIN_REDIRECT_URL ='/' 
->>>>>>> Stashed changes
-=======
-
-LOGIN_REDIRECT_URL ='/' 
->>>>>>> Stashed changes
-=======
-
-LOGIN_REDIRECT_URL ='/' 
->>>>>>> Stashed changes
