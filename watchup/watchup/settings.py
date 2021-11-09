@@ -41,8 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     'disqus',
     'django.contrib.sites',
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -138,7 +141,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'meida')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 DISQUS_WEBSITE_SHORTNAME = 'watchup'
+=======
+
+LOGIN_REDIRECT_URL ='/' 
+>>>>>>> Stashed changes
 =======
 
 LOGIN_REDIRECT_URL ='/' 
