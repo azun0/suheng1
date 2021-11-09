@@ -1,4 +1,4 @@
-{%extends 'home/index.html' %}
+{%extends 'home1/index.html' %}
 
 {% block contents %}
 <div>...</div>
@@ -12,10 +12,10 @@
     <a href="{%url 'board:board_list' %}"><button>게시판</button></a>
 
     {% if login_session %}
-    <a href="{% url 'user:logout %}"><button>로그아웃</button></a>
+    <a href="{% url 'user1:logout %}"><button>로그아웃</button></a>
     {% else %}
-    <a href="{%url 'user:login' %}"><button>로그인</button></a>
-    <a href="{% url 'user:register' %}"><button>회원가입</button></a>
+    <a href="{%url 'user1:login' %}"><button>로그인</button></a>
+    <a href="{% url 'user1:register' %}"><button>회원가입</button></a>
     {% endif %}
 
     <div style="border: 1px black solid; margin: 20px 0px;"></div>
