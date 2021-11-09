@@ -24,7 +24,7 @@
                                 {{object.like.all.count}}
                             </span>
                             {% endif %}
-                            <ㅁ href="{% url photo:favorite' object.id %}" class="float-right btn-favorite {%if user in object.favorite.all %}acrivate{%endif%}">저장하기!</a>
+                            <a href="{% url photo:favorite' object.id %}" class="float-right btn-favorite {%if user in object.favorite.all %}acrivate{%endif%}">저장하기!</a>
                         </li>
                         <li class="list-group-item"> 수정일 : {{ object.updated }}</li>
                         <li class="list-group-item"> 생성일 : {{ object.created }}</li>
@@ -39,7 +39,18 @@
                 </div>
                 {% endfor %}
             </div>
-            <div class="col"></div>
+            <div class="col">
+                {% load static %}
+                <div class="card">
+                    <img src="{% static 'images/man.png' %}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">My Photo</h5>
+                        <p class="card-text">회원님의 스토리를 확인해보세요!</p>
+                        <a href="{% url 'photo:mylist' %}" class="btn btn-primary">My story</a>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %} 
