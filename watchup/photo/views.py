@@ -18,7 +18,15 @@ class PhotoCreate(CreateView):
     model = Photo
     fields = ['text', 'image']
     template_name_suffix = '_create'
-    success_url='/'
+    success_url='/home'
+
+    def form_valid(self,form):
+        form.instance.author_id = self.request.user.id
+        if form.is_valid():
+            form.instance.save()
+            return redirect('/home')
+        else:
+            return self.render_to_response({'form':form})
 
 class PhotoUpdate(UpdateView):
     model = Photo
@@ -30,7 +38,7 @@ class PhotoUpdate(UpdateView):
         object = self.get_object()
         if object.author != request.user:
             messages.warning(request, '수정할 권한이 없습니다.')
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/update/<int:pk>/')
         else:
             return super(PhotoUpdate, self).dispatch(request, *args, **kwargs)
 
@@ -43,7 +51,7 @@ class PhotoDelete(DeleteView):
         object = self.get_object()
         if object.author != request.user:
             messages.warning(request, '삭제할 권한이 없습니다.')
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('detail/<int:pk>/')
         else:
             return super(PhotoDelete, self).dispatch(request, *args, **kwargs)
 
@@ -81,7 +89,7 @@ class PhotoFavorite(View) :
                     photo.favorite.remove(user)
                 else:
                     photo.favorite.add(user)
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('mylist/')
 
 class PhotoLikeList(ListView):
     model = Photo
@@ -91,7 +99,7 @@ class PhotoLikeList(ListView):
         if not request.user.is authenticated:
             messages.warning(request, '로그인을 먼저하세요')
             return HttpResponseRedirect('/')
-        return super(PhotoLikeLIst, self).dispatch(request, *args, **kwargs)
+        return super(PhotoLikeList, self).dispatch(request, *args, **kwargs)
 
     def get_queryset(self):
         user = self.request.user
@@ -106,19 +114,19 @@ class PhotoFavoriteList(ListView):
         if not request.user.is authenticated:
             messages.warning(request, '로그인을 먼저하세요')
             return HttpResponseRedirect('/')
-        return super(PhotoFavoriteLIst, self).dispatch(request, *args, **kwargs)
+        return super(PhotoFavoriteList, self).dispatch(request, *args, **kwargs)
 
     def get_queryset(self):
         user = self.request.user
         queryset = user.favorite_post.all()
         return queryset
 
+class PhotoMyList(ListView):
+    model = Photo
+    template_name = 'photo/photo_mylist.html'
 
-
-def form_valid(self,form):
-    form.instance.author_id = self.request.user.id
-    if form.is_valid():
-        form.instance.save()
-        return redirect('/')
-    else:
-        return self.render_to_response({'form':form})
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            messages.warning(request, '로그인을 먼저하세요')
+            return HttpResponseRedirect('/')
+        return super(PhotoMyList, self).dispatch(request, *args, **kwargs)
