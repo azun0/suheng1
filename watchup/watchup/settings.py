@@ -56,8 +56,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     'disqus',
     'django.contrib.sites',
+=======
+    'users.apps.UsersConfig',
+>>>>>>> Stashed changes
 =======
     'users.apps.UsersConfig',
 >>>>>>> Stashed changes
@@ -146,9 +150,12 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, '.static')
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 MEDIA_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'meida')
 =======
+=======
+>>>>>>> Stashed changes
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -158,12 +165,18 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 DISQUS_WEBSITE_SHORTNAME = 'watchup'
 LOGIN_REDIRECT_URL ='/' 
 =======
+=======
+>>>>>>> Stashed changes
 
 LOGIN_URL = '/users/login/'          # 로그인 URL
 LOGIN_REDIRECT_URL = '/users/main/'  # 로그인 후 URL
 LOGOUT_REDIRECT_URL = '/'            # 로그아웃 후 URL
 AUTH_USER_MODEL = "users.User"       # 커스텀 인증 모델
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
