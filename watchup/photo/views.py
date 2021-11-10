@@ -96,7 +96,7 @@ class PhotoLikeList(ListView):
     template_name = 'photo/photo_list.html'
     
     def dispatch(self, request, *args, **kwargs):
-        if not request.user.is authenticated:
+        if not request.user.is_authenticated:
             messages.warning(request, '로그인을 먼저하세요')
             return HttpResponseRedirect('/')
         return super(PhotoLikeList, self).dispatch(request, *args, **kwargs)
@@ -111,7 +111,7 @@ class PhotoFavoriteList(ListView):
     template_name = 'photo/photo_list.html'
     
     def dispatch(self, request, *args, **kwargs):
-        if not request.user.is authenticated:
+        if not request.user.is_authenticated:
             messages.warning(request, '로그인을 먼저하세요')
             return HttpResponseRedirect('/')
         return super(PhotoFavoriteList, self).dispatch(request, *args, **kwargs)
