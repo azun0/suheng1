@@ -74,7 +74,7 @@ ROOT_URLCONF = 'watchup.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "template0")],
+        'DIRS': [os.path.join(BASE_DIR, 'layout')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -154,6 +154,6 @@ DISQUS_WEBSITE_SHORTNAME = 'watchup'
 LOGIN_REDIRECT_URL ='/' 
 
 LOGIN_URL = '/users/login/'          # 로그인 URL
-LOGIN_REDIRECT_URL = '/users/main/'  # 로그인 후 URL
-LOGOUT_REDIRECT_URL = '/'            # 로그아웃 후 URL
+LOGIN_REDIRECT_URL = '/users/home/'  # 로그인 후 URL
+LOGOUT_REDIRECT_URL = '/users/home/' # 로그아웃 후 URL
 AUTH_USER_MODEL = "users.User"       # 커스텀 인증 모델
