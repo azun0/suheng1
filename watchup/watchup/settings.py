@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'disqus',
     'django.contrib.sites',
-    'users.apps.UsersConfig',
+    'users'
 ]
 
 MIDDLEWARE = [
