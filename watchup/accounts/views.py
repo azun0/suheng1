@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render
+
 def signup(request) :
     if request.method == 'POST':
         username=request.POST.get('username')
@@ -9,8 +10,9 @@ def signup(request) :
         
         user=User()
         user.username = username
-        user.password = password
+        user.set_password(password)
         user.save()
+        
         return render(request, 'accounts/signup_complete.html')
     else:
         context_values = {'form' : 'this is form'}
