@@ -8,7 +8,7 @@ class SignUpForm(forms.ModelForm):
 
     class meta:
         model = User
-        fields = ['username', 'password', 'first_name', 'last_name', 'email', ]
+        fields = ['username', 'password' ]
 
 
     def clean_Repeat_password(self):
