@@ -22,9 +22,3 @@ class Photo(models.Model):
 
     def get_absolute_url(self):
         return reverse('photo:detail', args=[self.id])
-    def get_absolute_url(self):
-        return reverse('photo:detail',args=[self.id])
-    def get_absolute_url(self):
-        return reverse('photo:detail',args=[self.id])
-    def get_absolute_url(self):
-        return reverse('photo:detail',args=[self.id])
