@@ -16,19 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import include
+from django.views.generic.base import RedirectView
 
 # http://localhost/
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('photo.urls')),
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
     path('', RedirectView.as_view(url="/home/", permanent=True)),
->>>>>>> Stashed changes
-=======
-    path('', RedirectView.as_view(url="/home/", permanent=True)),
->>>>>>> Stashed changes
     path('users/', include('users.urls')),
 ]
