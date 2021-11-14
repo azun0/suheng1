@@ -23,6 +23,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('photo.urls')),
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    path('', RedirectView.as_view(url="/home/", permanent=True)),
+>>>>>>> Stashed changes
 =======
     path('', RedirectView.as_view(url="/home/", permanent=True)),
 >>>>>>> Stashed changes
