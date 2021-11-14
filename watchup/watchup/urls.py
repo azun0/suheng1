@@ -24,5 +24,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('photo.urls')),
     path('', RedirectView.as_view(url="/home/", permanent=True)),
-    path('users/', include('users.urls')),
 ]
