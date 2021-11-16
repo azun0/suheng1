@@ -42,7 +42,7 @@
             </div>
             <div class="col">
                 {% load static %}
-                <div class="card">
+                <div class="card" style="width: 230px;">
                     <img src="{% static 'images/man.png' %}" class="card-img-top">
                     <div class="card-body">
                         {% if user.is_authenticated %}
@@ -50,7 +50,7 @@
                         <p class="card-text">회원님의 스토리를 확인해보세요!</p>
                         <a href="{% url 'photo:mylist' %}" class="btn btn-primary">My story</a>
                         {% else %}
-                        <h5 class="card-title">로그인 되지 않았습니다.</h5>
+                        <h8 class="card-title">로그인 후 이용해주세요</h5>
                         {% endif %}
                     </div>
                 </div>
