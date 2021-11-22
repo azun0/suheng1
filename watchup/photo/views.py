@@ -1,5 +1,4 @@
 from django.shortcuts import redirect, render
-
 from django.views.generic.list import ListView
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic.detail import DetailView
@@ -130,3 +129,4 @@ class PhotoMyList(ListView):
             messages.warning(request, '로그인을 먼저하세요')
             return HttpResponseRedirect('/')
         return super(PhotoMyList, self).dispatch(request, *args, **kwargs)
+ 
