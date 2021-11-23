@@ -73,7 +73,7 @@ class PhotoLike(View):
                     photo.like.add(user)
             referer_url = request.META.get('HTTP-REFERER')
             path = urlparse(referer_url).path
-            return HttpResponseRedirect(path)
+            return HttpResponseRedirect('http://127.0.0.1:8000/home/')
 
 class PhotoFavorite(View) :
     def get(self, request, *args, **kwargs) :
@@ -88,7 +88,7 @@ class PhotoFavorite(View) :
                     photo.favorite.remove(user)
                 else:
                     photo.favorite.add(user)
-            return HttpResponseRedirect('mylist/')
+            return HttpResponseRedirect('http://127.0.0.1:8000/favorite/')
 
 class PhotoLikeList(ListView):
     model = Photo
