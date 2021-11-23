@@ -137,7 +137,7 @@ class SearchFormView(FormView):
     template_name = 'photo/photo_search.html'
     
     def form_valid(self, form):
-        search_word = self.request.Photo['search_word']
+        search_word = self.request.POST['search_word']
         photo_L = Photo.objects.filter(Q(text__icontains=search_word))
         context = {}
         context['form'] = form
