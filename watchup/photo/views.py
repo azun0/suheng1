@@ -1,3 +1,4 @@
+from django.db import models
 from django.shortcuts import redirect, render
 from django.views.generic.list import ListView
 from django.views.generic.edit import *
@@ -12,6 +13,10 @@ from .models import Photo
 from django.db.models import Q
 
 class PhotoList(ListView):
+    model = Photo
+    template_name_suffix = '_list'
+
+class PhotoRank(ListView):
     model = Photo
     template_name_suffix = '_list'
 
