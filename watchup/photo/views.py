@@ -90,7 +90,7 @@ class PhotoFavorite(View) :
                     photo.favorite.remove(user)
                 else:
                     photo.favorite.add(user)
-            return HttpResponseRedirect('http://127.0.0.1:8000/favorite/')
+            return HttpResponseRedirect('http://127.0.0.1:8000/home/')
 
 class PhotoLikeList(ListView):
     model = Photo
