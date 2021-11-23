@@ -1,13 +1,15 @@
 from django.shortcuts import redirect, render
 from django.views.generic.list import ListView
-from django.views.generic.edit import UpdateView, CreateView, DeleteView
+from django.views.generic.edit import *
 from django.views.generic.detail import DetailView
 from django.views.generic.base import View
 from django.http import HttpResponseForbidden, HttpResponseRedirect
 from django.contrib import messages
 from urllib.parse import urlparse
 
+from .forms import PostSearchForm
 from .models import Photo
+from django.db.models import Q
 
 class PhotoList(ListView):
     model = Photo
@@ -129,4 +131,17 @@ class PhotoMyList(ListView):
             messages.warning(request, '로그인을 먼저하세요')
             return HttpResponseRedirect('/')
         return super(PhotoMyList, self).dispatch(request, *args, **kwargs)
- 
+
+class SearchFormView(FormView):
+    form_class = PostSearchForm
+    template_name = 'photo/photo_search.html'
+    
+    def form_valid(self, form):
+        search_word = self.request.POST['search_word']
+        photo_L = Photo.objects.filter(Q(text__icontains=search_word))
+        context = {}
+        context['form'] = form
+        context['search_term'] = search_word
+        context['object_list'] = photo_L
+
+        return render(self.request, self.template_name, context)
