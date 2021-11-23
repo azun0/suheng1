@@ -4,13 +4,6 @@
 {% endblock %} 
 
 {% block content %}
-<select id="sort-select" onchange="location = this.value;">
-    <option class="sort-date" value="/">최신순</option>
-    <option class="sort-likes" value="?sort=likes">좋아요순</option>
-    {% if user.is_authenticated %}
-    <option class="sort-mypost" value="?sort=mypost">내가쓴글</option>
-    {% endif %}
-</select>
 
     <div class='container'>
         <div class="row">
