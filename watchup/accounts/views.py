@@ -11,7 +11,6 @@ def signup(request) :
         user.username = username
         user.set_password(password)
         user.save()
-
         return render(request, 'accounts/signup_complete.html')
 
     else:
