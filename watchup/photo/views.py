@@ -10,15 +10,17 @@ from urllib.parse import urlparse
 
 from .forms import PostSearchForm
 from .models import Photo
-from django.db.models import Q
+from django.db.models import Q, Count
 
 class PhotoList(ListView):
     model = Photo
     template_name_suffix = '_list'
 
-class PhotoRank(ListView):
+class PhotoRecent(ListView):
     model = Photo
-    template_name_suffix = '_list'
+    template_name_suffix = '_recent'
+
+    ordering=['-updated']
 
 class PhotoCreate(CreateView):
     model = Photo

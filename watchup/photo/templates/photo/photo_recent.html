@@ -1,0 +1,32 @@
+{% extends 'photo/base.html' %}
+
+{% block title %}
+{% endblock %} 
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class='flex-container'>
+    <div class="row">
+        <div class="col-8">
+            {% for object in object_list %}
+            {% if forloop.counter <= 3 %}
+            <div class="card">
+                <div class="card-header">
+                    {{ object.author}}
+                </div>
+                <img src="{{ object.image.url }}" class="card-img-top" >
+                <div class="card-body">
+                    <p class="card-text">{{ object.text }}</p>
+                </div>
+            </div>
+            {% endif %}        
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -12,10 +12,10 @@
     
     .btn-like{
       display: inline-block;
-      width: 50px;
-      height: 50px;
-      background:url("{% static 'images/love.png' %}");
-      background-position: -100px -400px;
+      width: 46px;
+      height: 46px;
+      background:url("{% static 'images/love0.png.png' %}");
+      background-position: 0px 0px;
       text-indent: -9999px;
       overflow:visible;
       border:none;
@@ -53,8 +53,8 @@
     }
 
   </style>
-    <nav class="navbar navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/home">WATCHUP</a>
+    <nav class="navbar fixed-top navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/home"><img src="{% static 'images/logo.png' %}" height="50px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -65,14 +65,17 @@
               <a class="nav-link" href="{% url 'photo:index' %}"><img src="{% static 'images/house.png' %}" width="30px" height="30px"><span class="sr-only">(current)</span></a>
             </li>
             {% if user.is_authenticated %}
-            <li class="nav-item ">
-              <a class="nav-link" href="{% url 'photo:create' %}"><img src="{% static 'images/write.png' %}" width="30px" height="30px"><span class="sr-only">(current)</a>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'photo:like_list' %}"><img src="{% static 'images/love.png' %}" width="30px" height="30px"><span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'photo:like_list' %}"><img src="{% static 'images/hello.png' %}" width="30px" height="30px"><span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{% url 'photo:search' %}"><img src="{% static 'images/dotbogi.png' %}" width="30px" height="30px"><span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'photo:favorite_list' %}"><img src="{% static 'images/direct-download.png' %}" width="30px" height="30px"><span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{% url 'photo:favorite_list' %}"><img src="{% static 'images/load.png' %}" width="20px" height="20px"><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'photo:recent' %}"><img src="{% static 'images/crown.png' %}" width="30px" height="30px"><span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'accounts:logout' %}">로그아웃<span class="sr-only">(current)</a>

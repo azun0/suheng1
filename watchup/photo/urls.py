@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from django.urls import path
 from django.urls.resolvers import URLPattern
-from .views import PhotoMyList, PhotoList, PhotoDetail, PhotoUpdate, PhotoCreate, PhotoDelete, PhotoLike, PhotoFavorite,PhotoLikeList, PhotoFavoriteList, SearchFormView
+from .views import *
 
 app_name = "photo"
 
@@ -16,7 +16,8 @@ urlpatterns = [
     path("like/",PhotoLikeList.as_view(), name="like_list"),
     path("favorite/",PhotoFavoriteList.as_view(), name="favorite_list"),
     path("home/",PhotoList.as_view(),name='index'),
-    path("search/",SearchFormView.as_view(),name="search")
+    path("search/",SearchFormView.as_view(),name="search"),
+    path("recent/",PhotoRecent.as_view(),name="recent")
     ]
 
 from django.conf.urls.static import static

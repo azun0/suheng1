@@ -4,7 +4,12 @@
 {% endblock %} 
 
 {% block content %}
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
     <div class='container'>
         <div class="row">
             <div class="col-8">
@@ -28,8 +33,20 @@
                             <a href="{% url 'photo:favorite' object.id %}" class="float-right btn-favorite {%if user in object.favorite.all %}active{% endif %}"></a>                 
                         </li>
                         <li class="list-group-item">게시 : {{ object.created }} ,&nbsp;수정 : {{ object.updated }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'photo:detail' object.id %}" class="card-link">댓글달기</a></li>
-
                     </ul>
+                    {% if user == object.author %}
+                        <body>
+                        <div id="menu">
+                            <ul>
+                                <li>더보기</a>
+                                    <ul>
+                                        <li><a href="{% url 'photo:update' object.id %}" class="card-link">수정하기</a></li>
+                                        <li><a href="{% url 'photo:delete' object.id %}" class="card-link">삭제하기</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        </body>
                     <head>
                         <style type="text/css">
                         * {
@@ -77,31 +94,25 @@
                             }
                         </style>
                     </head>
-                        {% if user == object.author %}
-                        <body>
-                        <div id="menu">
-                            <ul>
-                                <li>더보기</a>
-                                    <ul>
-                                        <li><a href="{% url 'photo:update' object.id %}" class="card-link">수정하기</a></li>
-                                        <li><a href="{% url 'photo:delete' object.id %}" class="card-link">삭제하기</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        </body>
-                        {% endif %}
+                    {% endif %}
                 </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                
                 {% endfor %}
             </div>
             <div class="col">
                 {% load static %}
-                        <div class="card" style="width: 230px;">
+                        <div  class="card" style="width: 230px;">
                             <img src="{% static 'images/person.png' %}" class="card-img-top" style="width: 150px;">
                             <div class="card-body">
                                 {% if user.is_authenticated %}
                                 <h5 class="card-title">{{user.username}}</h5>
                                 <a href="{% url 'photo:mylist' %}" class="btn btn-primary">스토리</a>
+                                <a href="{% url 'photo:create' %}" class="btn btn-primary">글쓰기</a>
                                 {% else %}
                                 <h8 class="card-title">로그인 후 이용해주세요</h5>
                                 {% endif %}
