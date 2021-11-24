@@ -70,7 +70,7 @@ class PhotoDetail(DetailView):
 class PhotoLike(View):
     def get(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
-            return HttpResponseForbidden()
+            return HttpResponseRedirect('http://127.0.0.1:8000/home/')
         else:
             if 'photo_id' in kwargs:
                 photo_id = kwargs['photo_id']
@@ -87,7 +87,7 @@ class PhotoLike(View):
 class PhotoFavorite(View) :
     def get(self, request, *args, **kwargs) :
         if not request.user.is_authenticated:
-            return HttpResponseForbidden()
+            return HttpResponseRedirect('http://127.0.0.1:8000/home/')
         else:
             if 'photo_id' in kwargs:
                 photo_id = kwargs['photo_id']
