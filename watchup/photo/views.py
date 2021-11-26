@@ -19,7 +19,6 @@ class PhotoList(ListView):
 class PhotoRecent(ListView):
     model = Photo
     template_name_suffix = '_recent'
-
     ordering=['-updated']
 
 class PhotoCreate(CreateView):

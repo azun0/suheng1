@@ -10,6 +10,7 @@ class Photo(models.Model):
     image = models.ImageField(upload_to='timeline_photo/%Y/%m/%d')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    link = models.TextField(blank=True)
 
     like = models.ManyToManyField(User, related_name='like_post', blank=True)
     favorite = models.ManyToManyField(User, related_name='favorite_post', blank=True)
