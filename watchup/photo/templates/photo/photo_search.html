@@ -10,20 +10,20 @@
 <br>
 <br>
 <br>
-<div id="content">
+<div id="content" class="word12">
     <h1>검색-검색</h1>
 
-    <form method="post">
+    <form method="post" class="word12">
         {% csrf_token %}
         {{ form.as_table }}
-        <input type="submit" value="검색">
+        <input type="submit" value="검색" class="word12">
     </form>
 
     <br><br>
 
     {% if object_list %}
         <div class='container'>
-            <div class="row">
+            <div class="row word12">
                 <div class="col-8">
                     {% for object in object_list %}
                     <div class="card">

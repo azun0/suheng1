@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 
 from .forms import PostSearchForm
 from .models import Photo
-from django.db.models import Q, Count
+from django.db.models import Q
 
 class PhotoList(ListView):
     model = Photo
@@ -23,7 +23,7 @@ class PhotoRecent(ListView):
 
 class PhotoCreate(CreateView):
     model = Photo
-    fields = ['text', 'image']
+    fields = ['text', 'image', 'link']
     template_name_suffix = '_create'
     success_url='/home'
 
@@ -37,7 +37,7 @@ class PhotoCreate(CreateView):
 
 class PhotoUpdate(UpdateView):
     model = Photo
-    fields = ['author', 'text', 'image']
+    fields = ['author', 'text', 'image', 'link']
     template_name_suffix = '_update'
     # success_url='/'
 
