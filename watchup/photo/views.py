@@ -69,6 +69,7 @@ class PhotoDetail(DetailView):
 class PhotoLike(View):
     def get(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
+            messages.warning(request, '로그인을 먼저하세요')
             return HttpResponseRedirect('http://127.0.0.1:8000/home/')
         else:
             if 'photo_id' in kwargs:
@@ -86,6 +87,7 @@ class PhotoLike(View):
 class PhotoFavorite(View) :
     def get(self, request, *args, **kwargs) :
         if not request.user.is_authenticated:
+            messages.warning(request, '로그인을 먼저하세요')
             return HttpResponseRedirect('http://127.0.0.1:8000/home/')
         else:
             if 'photo_id' in kwargs:
