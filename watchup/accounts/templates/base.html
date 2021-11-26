@@ -3,13 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %} {% endblock %}</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="styles/style.css" rel="stylesheet" type="text/css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
 
 </head>
 <body>
   {% load static %}
   <style>
+      @keyframes box-ani{
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(100px, 100px); }
+    }
+    
+    .box {
+     animation-name: box-ani;
+    }
+
+    @font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    
+    .word12{
+        font-family: 'GmarketSansMedium';
+    }
     
     .btn-like{
       display: inline-block;
@@ -51,8 +69,8 @@
       text-indent: -9999px;
       overflow:visible;
       border:none;
+    
     }
-
   </style>
     <nav class="navbar fixed-top navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/home"><img src="{% static 'images/logo.png' %}" height="50px"></a>
