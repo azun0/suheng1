@@ -11,10 +11,10 @@
 <br>
         <div class="row">
             <div class="col-8">
-                <div class="card">   
+                <div class="card border-danger">   
                     
                     <img src="{{ object.image.url }}" class="card-img-top" alt="...">
-                    <div class="card-body">
+                    <div class="card-body border-danger">
 
                         <h5 class="card-title">{{ object.author }}</h5>
                         <p class="card-text">{{ object.text }}</p>
@@ -43,8 +43,8 @@
                     </script>
                     
                     <div class="card-body">
-                        <a href="{% url 'photo:update' object.id %}" class="card-link">수정하기</a>
-                        <a href="{% url 'photo:delete' object.id %}" class="card-link">삭제하기</a>
+                        <a href="{% url 'photo:update' object.id %}" class="card-link" style="color: red">수정하기</a>
+                        <a href="{% url 'photo:delete' object.id %}" class="card-link" style="color: red">삭제하기</a>
                     </div>
                 </div>
             </div>
