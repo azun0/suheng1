@@ -19,7 +19,10 @@ urlpatterns = [
     path("search/",SearchFormView.as_view(),name="search"),
     path("recent/",PhotoRecent.as_view(),name="recent"),
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     path("start/",StartView.as_view(),name="start"),
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     ]
