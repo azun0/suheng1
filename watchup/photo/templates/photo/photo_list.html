@@ -14,15 +14,15 @@
         <div class="row word12">
             <div class="col-8">
                 {% for object in object_list %}
-                <div class="card .box">
+                <div class="card border-danger mb-3">
                     <div class="card-header">
                         {{ object.author}}
                     </div>
                     <img src="{{ object.image.url }}" class="card-img-top" >
-                    <div class="card-body">
+                    <div class="card-body border-danger">
                         <p class="card-text">{{ object.text }}</p>
                     </div>
-                    <ul class="list-group list-group-flush">
+                    <ul class="list-group list-group-flush border-danger">
                         <li class="list-group-item">
                             <a href="{% url 'photo:like' object.id %}" class="float-left btn-like {%if user in object.like.all %}active{% endif %}"></a>
                             {% if object.like.all.count %}
@@ -32,16 +32,15 @@
                             {% endif %}
                             <a href="{% url 'photo:favorite' object.id %}" class="float-right btn-favorite {%if user in object.favorite.all %}active{% endif %}"></a>                 
                         </li>
-                        <li class="list-group-item">게시 : {{ object.created }} ,&nbsp;수정 : {{ object.updated }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'photo:detail' object.id %}" class="card-link">댓글달기</a></li>
-                    </ul>
-                    {% if user == object.author %}
+                        <li class="list-group-item border-danger">게시 : {{ object.created }} ,&nbsp;수정 : {{ object.updated }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'photo:detail' object.id %}" class="card-link" style="color: red">댓글달기</a></li>
+                        {% if user == object.author %}
                         <body>
                         <div id="menu">
                             <ul>
                                 <li>더보기</a>
                                     <ul>
-                                        <li><a href="{% url 'photo:update' object.id %}" class="card-link">수정하기</a></li>
-                                        <li><a href="{% url 'photo:delete' object.id %}" class="card-link">삭제하기</a></li>
+                                        <li><a href="{% url 'photo:update' object.id %}" class="card-link" style="color: white">&nbsp;&nbsp;&nbsp;수정하기</a></li>
+                                        <li><a href="{% url 'photo:delete' object.id %}" class="card-link" style="color: white">&nbsp;&nbsp;&nbsp;삭제하기</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -52,45 +51,42 @@
                         
                         #menu > ul > li {
                             float:left;
-                            width:140px;
+                            width:200px;
                             position:relative;
                         }
                         #menu > ul > li > ul {
-                            width:130px;
+                            width:200px;
                             display:none;
                             position: absolute;
-                            font-size:14px;
-                            background: skyblue;
+                            font-size:17px;
+                            background: white;
                         }
                         #menu > ul > li:hover > ul {
                             display:block;
                             
                         }
                         #menu > ul > li > ul > li:hover {
-                            background: orange;
+                            background: red;
                             transition: ease 1s;
                             }
                         </style>
                     </head>
                     {% endif %}
                 </div>
+                    </ul>
                 <br>
                 <br>
-                <br>
-                <br>
-                <br>
-                
                 {% endfor %}
             </div>
             <div class="col word12">
                 {% load static %}
-                        <div  class="card" style="width: 230px;">
+                        <div  class="card border-danger" style="width: 230px;">
                             <img src="{% static 'images/person.png' %}" class="card-img-top" style="width: 150px;">
                             <div class="card-body">
                                 {% if user.is_authenticated %}
                                 <h5 class="card-title">{{user.username}}</h5>
-                                <a href="{% url 'photo:mylist' %}" class="btn btn-primary">스토리</a>
-                                <a href="{% url 'photo:create' %}" class="btn btn-primary">글쓰기</a>
+                                <a href="{% url 'photo:mylist' %}" class="btn btn-light border-danger">스토리</a>
+                                <a href="{% url 'photo:create' %}" class="btn btn-light border-danger">글쓰기</a>
                                 {% else %}
                                  <h8 class="card-title">로그인 후 이용해주세요</h5>
                                 {% endif %}

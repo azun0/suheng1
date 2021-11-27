@@ -12,13 +12,13 @@
 <br>
 <div class="row word12">
     <div class="'col-6">
-        <div class="alert alert-primary" role="alert">
+        <div class="alert alert-danger" role="alert">
             로그인 정보를 입력하세요.
         </div>
         <form action="" method="post">
             {% csrf_token %}
             {{form.as_p}}
-            <input type="submit" value="login" class = 'btn btn-outline-primary'>
+            <input type="submit" value="login" class = 'btn btn-outline-danger'>
         </form>
     </div>
     <div class="col"></div>

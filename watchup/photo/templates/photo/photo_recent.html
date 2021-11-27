@@ -8,16 +8,21 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<div class='flex-container'>
-    <div class="row">
-        <div class="col-8">
-            {% for object in object_list %}
-            <iframe  title="YouTube video player" class="youtube-player" type="text/html"  width="560" height="315" src="//www.youtube.com/embed/{{object.link}}?theme=light&autohide=1&controls=2&showinfo=1" frameborder="0" allowfullscreen></iframe>
+    {% for object in object_list %}
+    <br>
+    <div class="card col-md-5">
+        <div class="card-header">
+            {{ object.author}}
         </div>
-        {% endfor %}
+    <div class="card body">
+    <iframe  title="YouTube video player" class="youtube-player" type="text/html"  width="560" height="315" src="https://www.youtube.com/embed/{{object.link}}?theme=light&autohide=1&controls=2&showinfo=1" frameborder="0" allowfullscreen></iframe>
     </div>
-</div>
+    </div>
+    </div>
+    <br>
+    <br>
+        {% endfor %}
+  </div>
+    </div>
 
 {% endblock %}
