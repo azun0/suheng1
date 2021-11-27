@@ -21,7 +21,10 @@ urlpatterns = [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     path("start/",StartView.as_view(),name="start"),
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
