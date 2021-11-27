@@ -17,7 +17,8 @@ urlpatterns = [
     path("favorite/",PhotoFavoriteList.as_view(), name="favorite_list"),
     path("home/",PhotoList.as_view(),name='index'),
     path("search/",SearchFormView.as_view(),name="search"),
-    path("recent/",PhotoRecent.as_view(),name="recent")
+    path("recent/",PhotoRecent.as_view(),name="recent"),
+    path("start/",StartView.as_view(),name="start"),
     ]
 
 from django.conf.urls.static import static

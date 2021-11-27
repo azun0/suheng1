@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome!</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <style>
+        *{
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+body {
+  background-color: #34495e;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+.loginbtn {
+  position:absolute;
+  width:300px;
+  height:400px;
+  padding: 30px, 20px;
+  background-color:#FFFFFF;
+  text-align:center;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border-radius: 15px;
+}
+
+.ignorebtn {
+    position: relative;
+    left:40%;
+    width:300px;
+  height:400px;
+    background-color:#FFFFFF;
+  text-align:center;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border-radius: 15px;
+    
+}
+
+.btn {
+  position:relative;
+  left:40%;
+  top:30px;
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+  width:80%;
+  height:80%;
+  background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+  background-position: left;
+  background-size: 200%;
+  color:white;
+  font-weight: bold;
+  border:none;
+  cursor:pointer;
+  transition: 0.4s;
+  display:inline;
+  border-radius : 15px
+}
+
+    </style>
+</head>
+<body width="100%" height="100%">
+    <form action="index.html" method="post" class="loginbtn">
+        <a href = "http://127.0.0.1:8000/accounts/login/">
+            <button type="button" class="btn">
+                회원
+            </button>
+        </a>
+      <div class="bottomText">
+        로그인 화면으로 이동합니다.
+      </div>
+    </form>
+    <form action="index.html" method="post" class="ignorebtn">
+        <a href = "http://127.0.0.1:8000/home">
+            <button type="button" class="btn">
+                비회원
+            </button>
+        </a>
+      <div class="bottomText">
+        로그인하지 않고 사용합니다.
+      </div>
+    </form>
+  </body>
+</html>

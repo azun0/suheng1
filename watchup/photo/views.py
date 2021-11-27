@@ -153,3 +153,7 @@ class SearchFormView(FormView):
         context['object_list'] = photo_L
 
         return render(self.request, self.template_name, context)
+
+class StartView(View):
+    model = Photo
+    template_name = 'photo/start.html'
