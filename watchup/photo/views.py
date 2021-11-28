@@ -154,6 +154,5 @@ class SearchFormView(FormView):
 
         return render(self.request, self.template_name, context)
 
-class StartView(View):
-    model = Photo
-    template_name = 'photo/start.html'
+def start(request):
+    return render(request, 'photo/start.html')
