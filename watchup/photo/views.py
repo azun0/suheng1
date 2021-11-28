@@ -7,7 +7,7 @@ from django.views.generic.base import View
 from django.http import HttpResponseForbidden, HttpResponseRedirect
 from django.contrib import messages
 from urllib.parse import urlparse
-
+from django.contrib.auth.models import User
 from .forms import PostSearchForm
 from .models import Photo
 from django.db.models import Q
