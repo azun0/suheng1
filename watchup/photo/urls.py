@@ -2,6 +2,7 @@ from django.conf.urls import url
 from django.urls import path
 from django.urls.resolvers import URLPattern
 from .views import *
+from . import views
 
 app_name = "photo"
 
@@ -18,7 +19,7 @@ urlpatterns = [
     path("home/",PhotoList.as_view(),name='index'),
     path("search/",SearchFormView.as_view(),name="search"),
     path("recent/",PhotoRecent.as_view(),name="recent"),
-    path("start/",StartView.as_view(),name="start"),
+    path("start/",views.start,name="start"),
     ]
 
 from django.conf.urls.static import static
