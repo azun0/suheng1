@@ -20,7 +20,7 @@
                     <a href="{% url 'photo:mylist' %}" class="btn btn-light border-danger">스토리</a>
                     <a href="{% url 'photo:create' %}" class="btn btn-light border-danger">글쓰기</a>
                     {% else %}
-                     <h8 class="card-title">로그인 후 이용해주세요</h5>
+                     <h8 class="card-title">로그인 후 이용하세요</h5>
                     {% endif %}
                 </div>
             </div>
@@ -52,46 +52,11 @@
                         </li>
                         <li class="list-group-item border-danger" style="font-size: small;">게시 : {{ object.created }} ,<br>수정 : {{ object.updated }}<br><a href="{% url 'photo:detail' object.id %}" class="card-link" style="color: red">댓글달기</a></li>
                         {% if user == object.author %}
-                        <body>
-                        <div id="menu">
-                            <ul>
-                                <li>더보기</a>
-                                    <ul>
-                                        <li><a href="{% url 'photo:update' object.id %}" class="card-link" style="color: white">&nbsp;&nbsp;&nbsp;수정하기</a></li>
-                                        <li><a href="{% url 'photo:delete' object.id %}" class="card-link" style="color: white">&nbsp;&nbsp;&nbsp;삭제하기</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        </body>
-                    <head>
-                        <style type="text/css">
-                        
-                        #menu > ul > li {
-                            float:left;
-                            width:200px;
-                            position:relative;
-                        }
-                        #menu > ul > li > ul {
-                            width:200px;
-                            display:none;
-                            position: absolute;
-                            font-size:17px;
-                            background: white;
-                        }
-                        #menu > ul > li:hover > ul {
-                            display:block;
-                            
-                        }
-                        #menu > ul > li > ul > li:hover {
-                            background: red;
-                            transition: ease 1s;
-                            }
-                        </style>
-                    </head>
+                        <li class="list-group-item border-danger" style="font-size: small;"><a href="{% url 'photo:update' object.id %}" class="card-link" style="color: red">수정하기</a><br><a href="{% url 'photo:delete' object.id %}" class="card-link" style="color: red">삭제하기</a>
                     {% endif %}
                 </div>
                     </ul>
+                    <br>
                 {% endfor %}
             </div>
         </div>
