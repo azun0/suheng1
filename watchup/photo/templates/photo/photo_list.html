@@ -54,8 +54,8 @@
                         {% if user == object.author %}
                         <li class="list-group-item border-danger" style="font-size: small;"><a href="{% url 'photo:update' object.id %}" class="card-link" style="color: red">수정하기</a><br><a href="{% url 'photo:delete' object.id %}" class="card-link" style="color: red">삭제하기</a>
                     {% endif %}
+                </ul>
                 </div>
-                    </ul>
                     <br>
                 {% endfor %}
             </div>
