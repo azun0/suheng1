@@ -11,12 +11,13 @@
     <div class ="col"></div>
     <div class = "col-6">
         <form action="" method="post">
-            <div class = "alert alert-danger ">계정 정보를 입력해주세요.</div>
+            <div class = "alert alert-primary ">계정 정보를 입력해주세요.</div>
             {% csrf_token %}
             <label>이름 : <input type="text" name = "username"></label>
             <label>비밀번호 : <input type="password" name = "password"></label>
             <label>비밀번호 재입력 : <input type="password" name = "password2"></label>
-        <input type="submit" value="회원가입" class="btn btn-outline-info border-danger" style="color: red;">
+            <br>
+        <input type="submit" value="회원가입" class="btn btn-outline-primary" ">
         </form>
     </div>
     <div class = 'col'></div>

@@ -12,11 +12,12 @@
 <br>
 <div id="content" class="word12">
     <h1>게시글 검색</h1>
-
+<br>
+<br>
     <form method="post" class="word12">
         {% csrf_token %}
         {{ form.as_table }}
-        <input type="submit" value="검색" class="word12 alert alert-danger">
+        <input type="submit" value="검색" class="word12 btn btn-outline-primary">
     </form>
 
     <br><br>
