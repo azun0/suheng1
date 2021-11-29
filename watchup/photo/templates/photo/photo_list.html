@@ -10,13 +10,12 @@
 <br>
 <br>
 <br>
-<div class="col word12 card12">
-    {% load static %}
-            <div  class="card card12" style="width: 200px;">
-                <img src="{% static 'images/person.png' %}" class="card-img-top" style="width: 150px;">
+{% load static %}
+        <div class="word12 card12 col-md-2 col-md-offset-10">
+            <div  class="card card12 " style="width: 200px;">
                 <div class="card-body">
                     {% if user.is_authenticated %}
-                    <h5 class="card-title">{{user.username}}</h5>
+                    <h5 class="card-title">{{user.username}} 님</h5>
                     <a href="{% url 'photo:mylist' %}" class="btn btn-light border-danger">스토리</a>
                     <a href="{% url 'photo:create' %}" class="btn btn-light border-danger">글쓰기</a>
                     {% else %}
