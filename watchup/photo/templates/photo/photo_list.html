@@ -10,9 +10,9 @@
 <br>
 <br>
 <br>
-<div class="col word12">
+<div class="col word12 card12">
     {% load static %}
-            <div  class="card border-danger" style="width: 200px;">
+            <div  class="card card12" style="width: 200px;">
                 <img src="{% static 'images/person.png' %}" class="card-img-top" style="width: 150px;">
                 <div class="card-body">
                     {% if user.is_authenticated %}
@@ -32,15 +32,15 @@
             <div class="col-11">
                 <div class="card-columns">
                 {% for object in object_list %}
-                <div class="card border-danger mb-3">
+                <div class="card card12 mb-3">
                     <div class="card-header">
                         {{ object.author}}
                     </div>
                     <img src="{{ object.image.url }}" class="card-img-top" >
-                    <div class="card-body border-danger">
+                    <div class="card-body ">
                         <p class="card-text">{{ object.text }}</p>
                     </div>
-                    <ul class="list-group list-group-flush border-danger">
+                    <ul class="list-group list-group-flush ">
                         <li class="list-group-item">
                             <a href="{% url 'photo:like' object.id %}" class="float-left btn-like {%if user in object.like.all %}active{% endif %}"></a>
                             {% if object.like.all.count %}
@@ -50,9 +50,9 @@
                             {% endif %}
                             <a href="{% url 'photo:favorite' object.id %}" class="float-right btn-favorite {%if user in object.favorite.all %}active{% endif %}"></a>                 
                         </li>
-                        <li class="list-group-item border-danger" style="font-size: small;">게시 : {{ object.created }} ,<br>수정 : {{ object.updated }}<br><a href="{% url 'photo:detail' object.id %}" class="card-link" style="color: red">댓글달기</a></li>
+                        <li class="list-group-item " style="font-size: small;">게시 : {{ object.created }} ,<br>수정 : {{ object.updated }}<br><a href="{% url 'photo:detail' object.id %}" class="card-link" style="color: red">댓글달기</a></li>
                         {% if user == object.author %}
-                        <li class="list-group-item border-danger" style="font-size: small;"><a href="{% url 'photo:update' object.id %}" class="card-link" style="color: red">수정하기</a><br><a href="{% url 'photo:delete' object.id %}" class="card-link" style="color: red">삭제하기</a>
+                        <li class="list-group-item " style="font-size: small;"><a href="{% url 'photo:update' object.id %}" class="card-link" style="color: red">수정하기</a><br><a href="{% url 'photo:delete' object.id %}" class="card-link" style="color: red">삭제하기</a>
                     {% endif %}
                 </ul>
                 </div>
