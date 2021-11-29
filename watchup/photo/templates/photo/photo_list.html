@@ -50,9 +50,9 @@
                             {% endif %}
                             <a href="{% url 'photo:favorite' object.id %}" class="float-right btn-favorite {%if user in object.favorite.all %}active{% endif %}"></a>                 
                         </li>
-                        <li class="list-group-item " style="font-size: small;">게시 : {{ object.created }} ,<br>수정 : {{ object.updated }}<br><a href="{% url 'photo:detail' object.id %}" class="card-link" style="color: red">댓글달기</a></li>
+                        <li class="list-group-item " style="font-size: small;  border-radius: 30px;">게시 : {{ object.created }} ,<br>수정 : {{ object.updated }}<br><a href="{% url 'photo:detail' object.id %}" class="card-link" style="color: red">댓글달기</a></li>
                         {% if user == object.author %}
-                        <li class="list-group-item " style="font-size: small;"><a href="{% url 'photo:update' object.id %}" class="card-link" style="color: red">수정하기</a><br><a href="{% url 'photo:delete' object.id %}" class="card-link" style="color: red">삭제하기</a>
+                        <li class="list-group-item " style="font-size: small; border-radius: 30px;"><a href="{% url 'photo:update' object.id %}" class="card-link" style="color: red">수정하기</a><br><a href="{% url 'photo:delete' object.id %}" class="card-link" style="color: red">삭제하기</a>
                     {% endif %}
                 </ul>
                 </div>

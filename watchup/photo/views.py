@@ -39,7 +39,7 @@ class PhotoUpdate(UpdateView):
     model = Photo
     fields = ['author', 'text', 'image', 'link']
     template_name_suffix = '_update'
-    # success_url='/'
+    success_url='/home'
 
     def dispatch(self, request, *args, **kwargs):
         object = self.get_object()
@@ -52,7 +52,7 @@ class PhotoUpdate(UpdateView):
 class PhotoDelete(DeleteView):
     model = Photo
     template_name_suffix = '_delete'
-    success_url='/'
+    success_url='/home'
 
     def dispatch(self, request,*args, **kwargs):
         object = self.get_object()
@@ -107,8 +107,7 @@ class PhotoLikeList(ListView):
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
             messages.warning(request, '로그인을 먼저하세요')
-            return HttpResponseRedirect('/')
-        return super(PhotoLikeList, self).dispatch(request, *args, **kwargs)
+            return HttpResponseRedirect('/accounts/login')
 
     def get_queryset(self):
         user = self.request.user
@@ -122,7 +121,7 @@ class PhotoFavoriteList(ListView):
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
             messages.warning(request, '로그인을 먼저하세요')
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/accounts/login')
         return super(PhotoFavoriteList, self).dispatch(request, *args, **kwargs)
 
     def get_queryset(self):
@@ -137,7 +136,7 @@ class PhotoMyList(ListView):
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
             messages.warning(request, '로그인을 먼저하세요')
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/accounts/login')
         return super(PhotoMyList, self).dispatch(request, *args, **kwargs)
 
 class SearchFormView(FormView):
