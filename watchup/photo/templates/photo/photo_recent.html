@@ -14,6 +14,7 @@
         <h1>최근 영상</h1>
         
         {% for object in object_list %}
+        {% if object.link %}
         <div class="card col-md-7">
             <div class="card-header">
                 {{ object.author}}
@@ -24,6 +25,7 @@
         </div>
         <br>
         <br>
+        {% endif %}
         {% endfor %}
     </div>
         </div>

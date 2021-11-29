@@ -18,7 +18,9 @@
 
                         <h5 class="card-title">{{ object.author }}</h5>
                         <p class="card-text">{{ object.text }}</p>
+                        {% if object.link %}
                         <iframe  title="YouTube video player" class="youtube-player" type="text/html"  width="680" height="420" src="//www.youtube.com/embed/{{object.link}}?autoplay=1&theme=light&autohide=1&controls=2&showinfo=1" frameborder="0" allowfullscreen></iframe>
+                        {% endif %}
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
