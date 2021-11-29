@@ -16,11 +16,12 @@
             <div class="row">
                 {% for object in object_list %}
                 {% if object.author == request.user %}
-                <figure class="col-md-4">
-                    <div style="width: 18rem;">
-                        <img src="{{object.image.url}}" class="card-img-top alt="...">
+                <div class="card" style="width: 20rem;">
+                    <img src="{{object.image.url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">게시 : {{ object.created }} <br>수정 : {{ object.updated }}<br></p>
                     </div>
-                </figure>
+                  </div>
                 {% endif %}
                 {% endfor %}
             </div>
