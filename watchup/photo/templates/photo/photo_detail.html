@@ -11,7 +11,7 @@
 <br>
         <div class="row">
             <div class="col-8">
-                <div class="card border-danger">   
+                <div class="card">   
                     
                     <img src="{{ object.image.url }}" class="card-img-top" alt="...">
                     <div class="card-body border-danger">
@@ -43,8 +43,8 @@
                     </script>
                     
                     <div class="card-body">
-                        <a href="{% url 'photo:update' object.id %}" class="card-link" style="color: red">수정하기</a>
-                        <a href="{% url 'photo:delete' object.id %}" class="card-link" style="color: red">삭제하기</a>
+                        <a href="{% url 'photo:update' object.id %}" class="card-link" style="color: blue"><b>수정하기</b></a>
+                        <a href="{% url 'photo:delete' object.id %}" class="card-link" style="color: blue"><b>삭제하기</b></a>
                     </div>
                 </div>
             </div>

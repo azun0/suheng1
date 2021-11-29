@@ -6,12 +6,11 @@
 <br>
 <br>
 <br>
-<div class="alert alert-danger word12" role="alert">
+<div class="alert alert-primary word12" role="alert">
     진짜로 지우실 건가요?
 </div>
 <form action="" method="post">
     {% csrf_token %}
-    <input type="submit" value="삭제" class="word12">
-    <input type="submit" value="취소" class="word12">
+    <input type="submit" value="삭제" class="word12 btn-outline-primary">
 </form>
 {% endblock %}

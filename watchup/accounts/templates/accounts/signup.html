@@ -14,6 +14,8 @@
             <div class = "alert alert-primary ">계정 정보를 입력해주세요.</div>
             {% csrf_token %}
             <label>이름 : <input type="text" name = "username"></label>
+            <br>
+            <label>학번 : <input type="number" name = "class_num"></label>
             <label>비밀번호 : <input type="password" name = "password"></label>
             <label>비밀번호 재입력 : <input type="password" name = "password2"></label>
             <br>

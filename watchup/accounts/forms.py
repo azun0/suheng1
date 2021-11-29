@@ -5,10 +5,11 @@ class SignUpForm(forms.ModelForm):
 
     password = forms.CharField(label = 'Password', widget=forms.PasswordInput)
     Repeat_password = forms.CharField(label='Repeat_password', widget=forms.PasswordInput)
+    class_num = forms.CharField(label = 'class_num', widget=forms.NumberInput)
 
     class meta:
         model = User
-        fields = ['username', 'password' ]
+        fields = ['username', 'password', 'class_num' ]
 
 
     def clean_Repeat_password(self):
