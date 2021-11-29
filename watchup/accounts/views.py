@@ -5,6 +5,7 @@ from .forms import SignUpForm
 def signup(request) :
     if request.method == 'POST':
         username = request.POST.get('username')
+        class_num = request.POST.get('class_num')
         password = request.POST.get('password')
         password2 = request.POST.get('password2')
         user = User()

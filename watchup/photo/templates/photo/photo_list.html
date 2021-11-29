@@ -16,8 +16,8 @@
                 <div class="card-body">
                     {% if user.is_authenticated %}
                     <h5 class="card-title">{{user.username}} 님</h5>
-                    <a href="{% url 'photo:mylist' %}" class="btn btn-light border-danger">스토리</a>
-                    <a href="{% url 'photo:create' %}" class="btn btn-light border-danger">글쓰기</a>
+                    <a href="{% url 'photo:mylist' %}" class="btn btn-light border-primary">스토리</a>
+                    <a href="{% url 'photo:create' %}" class="btn btn-light border-primary">글쓰기</a>
                     {% else %}
                      <h8 class="card-title">로그인 후 이용하세요</h5>
                     {% endif %}
@@ -49,9 +49,9 @@
                             {% endif %}
                             <a href="{% url 'photo:favorite' object.id %}" class="float-right btn-favorite {%if user in object.favorite.all %}active{% endif %}"></a>                 
                         </li>
-                        <li class="list-group-item " style="font-size: small;  border-radius: 30px;">게시 : {{ object.created }} ,<br>수정 : {{ object.updated }}<br><a href="{% url 'photo:detail' object.id %}" class="card-link" style="color: red">댓글달기</a></li>
+                        <li class="list-group-item " style="font-size: small;  border-radius: 30px;">게시 : {{ object.created }} ,<br>수정 : {{ object.updated }}<br><a href="{% url 'photo:detail' object.id %}" class="card-link" style="color: blue">댓글달기</a></li>
                         {% if user == object.author %}
-                        <li class="list-group-item " style="font-size: small; border-radius: 30px;"><a href="{% url 'photo:update' object.id %}" class="card-link" style="color: red">수정하기</a><br><a href="{% url 'photo:delete' object.id %}" class="card-link" style="color: red">삭제하기</a>
+                        <li class="list-group-item " style="font-size: small; border-radius: 30px;"><a href="{% url 'photo:update' object.id %}" class="card-link" style="color:blue">수정하기</a><br><a href="{% url 'photo:delete' object.id %}" class="card-link" style="color: blue">삭제하기</a>
                     {% endif %}
                 </ul>
                 </div>
